@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Contacts</title>
+        <link rel="stylesheet" type="text/css" href="mi_contact-card.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#add_btn').click(function(){
+                    $('body').append('<div><h2>' + $('input[type=text]').val() + ' ' + $('#lastname').val()
+                    + '</h2><button id="desc">Click for Description!</button></div>')});
+            });
+
+            $(document).on('click', '#desc', function(){
+                $('#desc, h2').fadeTo(1000,0);
+                $('div').append('<h1>' + $('input[type=textarea]').val() + '</h1>');
+            });
+            $(document).on('click', 'h1', function(){
+                $('div').append('<h2>' + $('input[type=text]').val() + ' ' + $('#lastname').val()
+                    + '</h2><button id="desc">Click for Description!</button>');
+                $('#desc, h2').fadeTo(1000,1);
+                $('h1').fadeOut();
+            });
+            $(document).on('mouseover', 'h1', function(){
+                $('h1').css('color','maroon')
+            });
+            $(document).on('mouseout', 'h1', function(){
+                $('h1').css('color','black')
+            });
+        </script>
+    </head>
+    <body>
+        <form>
+            <label>First Name:<input type="text"></label>
+            <label>Last Name:<input id="lastname" type="text"></label>
+            <label>Description:<input type="textarea"></label>
+        </form>
+        <button id='add_btn'>Add User</button>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+*{
+    font-family: monospace;
+}
+div{
+    margin: 50px;
+    padding: 5px;
+    width:300px;
+    text-align: center;
+    background-color: #f3f3f3;
+    border: solid 1px #bbbbbb;
+}
+input{
+    display: inline;
+}
+label{
+    display: block;
+    padding: 5px;
+}
+body{
+    padding: 20px;
+}
